@@ -1,0 +1,17 @@
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/cloud_vendor?useSSL=false
+        username: root
+        password: GOKULrao10
+
+mvc:
+    path match:
+        matching-strategy: ANT_PATH_MATCHER
+
+#JPA Settings
+    jpa.hibernate.ddl_auto: create
+    
+
+
+
+
