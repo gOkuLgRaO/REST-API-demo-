@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(CloudVendorController.class)
-public class CloudVendorControllerTest {
+class CloudVendorControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
@@ -47,20 +47,20 @@ public class CloudVendorControllerTest {
     }
 
     @Test
-    void testGetCloudVendorDetails() throws Exception {
+    void getCloudVendorDetails() throws Exception {
         when(cloudVendorService.getCloudVendor("1")).thenReturn(cloudVendorOne);
         this.mockMvc.perform(get("/cloudvendor/" + "1")).andDo(print()).andExpect(status().isOk());
     }
 
     @Test
-    void testGetAllCloudVendorDetails() throws  Exception {
+    void getAllCloudVendorDetails() throws  Exception {
         when(cloudVendorService.getAllCloudVendors()).thenReturn(cloudVendorList);
         this.mockMvc.perform(get("/cloudvendor"))
                 .andDo(print()).andExpect(status().isOk());
     }
 
     @Test
-    void testCreateCloudVendorDetails() throws Exception {
+    void createCloudVendorDetails() throws Exception {
         // to convert object to Json
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
@@ -75,7 +75,7 @@ public class CloudVendorControllerTest {
     }
 
     @Test
-    void testUpdateCloudVendorDetails() throws Exception {
+    void updateCloudVendorDetails() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
         ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
@@ -90,7 +90,7 @@ public class CloudVendorControllerTest {
     }
 
     @Test
-    void testDeleteCloudVendorDetails() throws Exception {
+    void deleteCloudVendorDetails() throws Exception {
         when(cloudVendorService.deleteCloudVendor("1"))
                 .thenReturn("Cloud Vendor Deleted Successfully");
         this.mockMvc.perform(delete("/cloudvendor/" + "1"))

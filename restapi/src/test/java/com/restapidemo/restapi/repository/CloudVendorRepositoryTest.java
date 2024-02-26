@@ -13,7 +13,7 @@ import com.restapidemo.restapi.model.CloudVendor;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-public class CloudVendorRepositoryTest {
+class CloudVendorRepositoryTest {
     
     @Autowired
     private CloudVendorRepository cloudVendorRepository;
@@ -34,14 +34,14 @@ public class CloudVendorRepositoryTest {
     // Test case SUCCESS
 
     @Test
-    void testFindByVendorName_Found(){
+    void findByVendorName_Found(){
         List<CloudVendor> cloudVendorList= cloudVendorRepository.findByVendorName("Amazon");
         assertThat(cloudVendorList.get(0).getVendorId()).isEqualTo(cloudVendor.getVendorId());
         assertThat(cloudVendorList.get(0).getVendorAddress()).isEqualTo(cloudVendor.getVendorAddress());
     }
     // Test case FAILURE 
     @Test
-    void testFindByVendorName_NotFound(){
+    void findByVendorName_NotFound(){
         List<CloudVendor> cloudVendorList= cloudVendorRepository.findByVendorName("GCP");
         assertThat(cloudVendorList.isEmpty()).isTrue();
     }

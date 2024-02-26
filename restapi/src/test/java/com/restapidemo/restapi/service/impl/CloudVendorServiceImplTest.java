@@ -18,7 +18,10 @@ import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class CloudVendorServiceImplTest {
 
@@ -42,7 +45,7 @@ class CloudVendorServiceImplTest {
     }
 
     @Test
-    void testCreateCloudVendor() {
+    void createCloudVendor() {
         mock(CloudVendor.class);
         mock(CloudVendorRepository.class);
 
@@ -52,7 +55,7 @@ class CloudVendorServiceImplTest {
     }
 
     @Test
-    void testUpdateCloudVendor() {
+    void updateCloudVendor() {
         mock(CloudVendor.class);
         mock(CloudVendorRepository.class);
 
@@ -61,7 +64,7 @@ class CloudVendorServiceImplTest {
     }
 
     @Test
-    void testDeleteCloudVendor() {
+    void deleteCloudVendor() {
         mock(CloudVendor.class);
         mock(CloudVendorRepository.class, Mockito.CALLS_REAL_METHODS);
 
@@ -71,7 +74,7 @@ class CloudVendorServiceImplTest {
     }
 
     @Test
-    void testGetCloudVendor() {
+    void getCloudVendor() {
         mock(CloudVendor.class);
         mock(CloudVendorRepository.class);
 
@@ -82,7 +85,7 @@ class CloudVendorServiceImplTest {
     }
 
     @Test
-    void testGetByVendorName() {
+    void getByVendorName() {
         mock(CloudVendor.class);
         mock(CloudVendorRepository.class);
 
@@ -94,7 +97,7 @@ class CloudVendorServiceImplTest {
     }
 
     @Test
-    void testGetAllCloudVendors() {
+    void getAllCloudVendors() {
         mock(CloudVendor.class);
         mock(CloudVendorRepository.class);
 
